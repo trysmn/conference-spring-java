@@ -10,7 +10,9 @@ public class HibernateSpeakerRepositoryImplementation implements SpeakerReposito
     public List<Speaker> findAll() {
         List<Speaker> speakers = new ArrayList<>();
 
-        Speaker speaker = new Speaker("Hello", "World");
+        Speaker speaker = new Speaker();
+        speaker.setFirstName("Hello");
+        speaker.setLastName("World");
 
         speakers.add(speaker);
         return speakers;

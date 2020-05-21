@@ -11,7 +11,9 @@ public class SpeakerTest {
     public void shouldHaveAFirstNameAndALastName() {
         String firstName = "Test";
         String lastName = "Speaker";
-        Speaker speaker = new Speaker(firstName, lastName);
+        Speaker speaker = new Speaker();
+        speaker.setFirstName(firstName);
+        speaker.setLastName(lastName);
 
         assertThat(speaker.getFirstName(), is(notNullValue()));
         assertThat(speaker.getLastName(), is(notNullValue()));
