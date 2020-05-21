@@ -1,6 +1,4 @@
-import com.conference.model.Speaker;
 import com.conference.service.SpeakerService;
-import com.conference.service.SpeakerServiceImplementation;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

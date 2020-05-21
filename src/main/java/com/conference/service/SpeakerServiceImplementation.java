@@ -7,14 +7,14 @@ import java.util.List;
 
 public class SpeakerServiceImplementation implements SpeakerService {
 
-    private SpeakerRepository speakerRepository;
+    private SpeakerRepository repository;
+
+    public SpeakerServiceImplementation(SpeakerRepository speakerRepository) {
+        repository = speakerRepository;
+    }
 
     @Override
     public List<Speaker> findAll() {
-        return speakerRepository.findAll();
-    }
-
-    public void setSpeakerRepository(SpeakerRepository speakerRepository) {
-        this.speakerRepository = speakerRepository;
+        return repository.findAll();
     }
 }
