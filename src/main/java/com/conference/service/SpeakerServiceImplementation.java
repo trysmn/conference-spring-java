@@ -3,9 +3,13 @@ package com.conference.service;
 import com.conference.model.Speaker;
 import com.conference.repository.SpeakerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("speakerService")
 public class SpeakerServiceImplementation implements SpeakerService {
 
     private SpeakerRepository repository;
@@ -14,6 +18,7 @@ public class SpeakerServiceImplementation implements SpeakerService {
         System.out.println("We are currently inside the SpeakerServiceImplementation no args constructor...");
     }
 
+    @Autowired
     public SpeakerServiceImplementation(SpeakerRepository speakerRepository) {
         System.out.println("We are currently inside the SpeakerServiceImplementation repository constructor...");
         repository = speakerRepository;
@@ -24,7 +29,6 @@ public class SpeakerServiceImplementation implements SpeakerService {
         return repository.findAll();
     }
 
-    @Autowired
     public void setRepository(SpeakerRepository speakerRepository) {
         System.out.println("We are currently inside the SpeakerServiceImplementation repository setter...");
         this.repository = speakerRepository;
