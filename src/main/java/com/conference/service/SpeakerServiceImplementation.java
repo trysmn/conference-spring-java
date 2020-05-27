@@ -7,21 +7,27 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service("speakerService")
 public class SpeakerServiceImplementation implements SpeakerService {
 
+    @Autowired
     private SpeakerRepository repository;
 
     public SpeakerServiceImplementation() {
         System.out.println("We are currently inside the SpeakerServiceImplementation no args constructor...");
     }
 
-    @Autowired
     public SpeakerServiceImplementation(SpeakerRepository speakerRepository) {
         System.out.println("We are currently inside the SpeakerServiceImplementation repository constructor...");
         repository = speakerRepository;
+    }
+
+    @PostConstruct
+    private void initialize() {
+        System.out.println("We are currently inside the initialize method...");
     }
 
     @Override
