@@ -3,6 +3,7 @@ package com.conference.model;
 public class Speaker {
     private String firstName;
     private String lastName;
+    private double seedNumber;
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -18,5 +19,13 @@ public class Speaker {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public double getSeedNumber() {
+        return seedNumber;
+    }
+
+    public void setSeedNumber(double seedNumber) {
+        this.seedNumber = seedNumber;
     }
 }
